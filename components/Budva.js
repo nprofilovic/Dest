@@ -1,31 +1,28 @@
 import React, {Component} from "react";
 import {
 	TextInput,
-	Text,
 	View,
 	Image,
 	StatusBarIOS,
 	ListView,
-	FlatList,
   Animated,
   ActivityIndicator,
-	TouchableOpacity,
 	ScrollView,
 	Platform,
-	Dimensions,
 	StyleSheet,
-	SafeAreaView,
-	StatusBar
+  StatusBar
 	
 } from "react-native";
+import { Font } from "expo";
+
 import ProductItem from "./ProductItem";
 import Api from "../WooCommerce/Api";
-import { Container, Header, Content, List, ListItem, Thumbnail,  Body } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
 var offset = 0;
 var offsetHeader = 100;
 var beta = 50;
 
-export default class Leto extends Component {
+export default class Budva extends Component {
 		
 	
 
@@ -37,7 +34,7 @@ export default class Leto extends Component {
 			page: 1,
 			limit: 100,
 			status: "publish",
-			category: 76,
+			category: 95,
 			data:[],
 			text: '',
 			isOnline: true,
@@ -83,12 +80,18 @@ export default class Leto extends Component {
 	}
 
 	componentWillMount() {
-		this.startHeaderHeight = 80
+		this.startHeaderHeight = 100
         if (Platform.OS == 'android') {
-            this.startHeaderHeight = 100 + StatusBar.currentHeight
+            this.startHeaderHeight = 120 + StatusBar.currentHeight
         }
 		this.fetchData();
-	}
+  }
+  async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+    });
+  }
 	
 	fetchData() {
 		var self = this;
@@ -138,10 +141,15 @@ export default class Leto extends Component {
 			name: product.name,
 			image: product.images,
 			imageName: product.images.name,
-			price: product.price
+			price: product.price,
+			id: product.id,
+			description: product.description
 		});
 		
-	} 
+  }
+  onOpenHomePage = () => {
+    this.props.navigation.navigate('Home');
+  }
 	renderRow(product) {
 		return (
 				<ProductItem product={product} onOpenProduct={() => this.onOpenProductCard(product)} />
@@ -184,7 +192,7 @@ export default class Leto extends Component {
     
 		if (this.state.isLoading) {
       return (
-        <View style={{flex: 1, paddingTop: 20}}>
+        <View style={{flex: 1, paddingTop: 320}}>
           <ActivityIndicator />
         </View>
       );
@@ -192,7 +200,23 @@ export default class Leto extends Component {
 		
 		return (
 			<View>
-				<Header />
+      
+        <Header style={{ backgroundColor: 'white' }}>
+          <Left>
+            <Button transparent>
+              <Icon name='arrow-back' onPress={this.onOpenHomePage} style={{color:'black'}} />
+            </Button>
+          </Left>
+          <Body>
+            <Title style={{color:'black'}}>Budva</Title>
+          </Body>
+          <Right>
+            <Button transparent>
+              <Text></Text>
+            </Button>
+          </Right>
+        </Header>
+      
 
 				<ScrollView
 					style={{paddingTop: 5}}

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import MainService from './services/MainService';
 
-import { Navigation } from './components/AppNavigation'
+import { MainScreenNavigator } from './components/AppNavigation'
 import Home from './components/Home'
 import Leto from './components/Leto'
 
@@ -19,7 +19,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.loaded ? <Navigation /> : 
+        {this.state.loaded ? <MainScreenNavigator /> : 
         <View style={styles.image}>  
         <Image source={require('./img/dest-logo.jpg')} />
         </View>

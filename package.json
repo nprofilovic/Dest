@@ -19,12 +19,19 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "expo": "^27.0.1",
     "native-base": "^2.5.1",
+    "oauth-1.0a": "^2.2.4",
     "react": "16.3.1",
     "react-native": "~0.55.2",
     "react-native-elements": "^0.19.1",
+    "react-native-htmlview": "^0.12.1",
+    "react-native-material-cards": "^1.0.9",
+    "react-native-material-kit": "^0.5.1",
+    "react-native-ui-kitten": "^3.0.1",
     "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^2.3.1"
+    "react-navigation": "^2.3.1",
+    "woocommerce-api": "^1.4.2"
   }
 }
