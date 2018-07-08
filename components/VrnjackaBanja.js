@@ -1,29 +1,26 @@
 import React, {Component} from "react";
 import {
-	TextInput,
 	View,
-	Image,
-	StatusBarIOS,
 	ListView,
 	Animated,
 	ImageBackground,
-  ActivityIndicator,
+    ActivityIndicator,
 	ScrollView,
 	Platform,
 	StyleSheet,
-  StatusBar
+    StatusBar
 	
 } from "react-native";
 import { Font } from "expo";
 
-import ProductItem from "./ProductItemGrid";
+import ProductItem from "./ProductItemGridDin";
 import Api from "../WooCommerce/Api";
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
 var offset = 0;
 var offsetHeader = 100;
 var beta = 50;
 
-export default class Budva extends Component {
+export default class VrnjackaBanja extends Component {
 		
 	
 
@@ -35,7 +32,7 @@ export default class Budva extends Component {
 			page: 1,
 			limit: 100,
 			status: "publish",
-			category: 95,
+			category: 100,
 			data:[],
 			text: '',
 			isOnline: true,
@@ -86,13 +83,13 @@ export default class Budva extends Component {
             this.startHeaderHeight = 120 + StatusBar.currentHeight
         }
 		this.fetchData();
-  }
-  async componentDidMount() {
-    await Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
-    });
-  }
+    }
+    async componentDidMount() {
+        await Font.loadAsync({
+            Roboto: require("native-base/Fonts/Roboto.ttf"),
+            Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+        });
+    }
 	
 	fetchData() {
 		var self = this;
@@ -147,65 +144,62 @@ export default class Budva extends Component {
 			description: product.description
 		});
 		
-  }
-  onOpenHomePage = () => {
-    this.props.navigation.navigate('Home');
-  }
+    }
+    onOpenHomePage = () => {
+        this.props.navigation.navigate('Home');
+    }
 	renderRow(product) {
 		return (
 				<ProductItem product={product} onOpenProduct={() => this.onOpenProductCard(product)} />
 		);
 	}
 
-  
 
 	handleLoadMore = () => {
 		this.setState(state => ({ page: state.page + 1 }), () => this.fetchData());
-  };
+    };
 
-  handleRefresh = () => {
-    this.setState(
-      {
-        page: 1,
-        refreshing: true
-      },
-      () => {
-        this.fetchData();
-      }
-    );
-  };
-  renderFooter = () => {
-    return (
-      <View
-        style={{
-          paddingVertical: 20,
-          borderTopWidth: 1,
-          borderColor: "#CED0CE"
-        }}
-      >
-        <ActivityIndicator animating size="small" />
-      </View>
-    );
-  };
+    handleRefresh = () => {
+        this.setState(
+        {
+            page: 1,
+            refreshing: true
+        },
+        () => {
+            this.fetchData();
+        }
+        );
+    };
+    renderFooter = () => {
+        return (
+        <View
+            style={{
+            paddingVertical: 20,
+            borderTopWidth: 1,
+            borderColor: "#CED0CE"
+            }}
+        >
+            <ActivityIndicator animating size="small" />
+        </View>
+        );
+    };
 
 	render() {
-	
-    
 		if (this.state.isLoading) {
-      return (
-        <View style={{flex: 1, paddingTop: 320}}>
-          <ActivityIndicator />
-        </View>
-      );
+        return (
+            <View style={{flex: 1, paddingTop: 320}}>
+            <ActivityIndicator />
+            </View>
+        );
     }
 		
 		return (
 			<View style={styles.container}>
 			<StatusBar barStyle="light-content" />
 				<View style={styles.header}>
-					<ImageBackground source={require('../img/dest-budva.jpg')} style={styles.headerImageBackground} >
+					<ImageBackground source={require('../img/dest-vrnjacka-banja.jpg')} style={styles.headerImageBackground} >
 						<Icon name='arrow-back' onPress={this.onOpenHomePage} style={styles.headerIcon}/>
-						<Text style={styles.headerText}>Budva</Text>
+						<Text style={styles.headerText}>Vrnjačka banja</Text>
 					</ImageBackground>
 					
 				</View>
@@ -217,8 +211,8 @@ export default class Budva extends Component {
 					>
 						
 						<ListView
-						  style={{ flex: 1,  backgroundColor: '#fff', alignContent:'stretch'}}
-      			  contentContainerStyle={styles.list}	
+						    style={{ flex: 1,  backgroundColor: '#fff', alignContent:'stretch'}}
+                            contentContainerStyle={styles.list}	
 							onEndReached={this.onEndReached.bind(this)}
 							dataSource={this.state.dataSource}
 							onRefresh={this.handleRefresh}
@@ -236,26 +230,25 @@ export default class Budva extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff', 
-    
-  },
-  
-  logo: {
-    width: 100,
-    height: 100,
+    container: {
+        flex: 1,
+        backgroundColor: '#fff', 
+        
+    },
+    logo: {
+        width: 100,
+        height: 100,
     
 	},
 	image: {
-    flex: 1, 
-    height: null, 
-    width: null, 
-    resizeMode: 'cover', 
-    borderRadius: 10, 
-    borderWidth: 1, 
-    borderColor: '#dddddd',
-    paddingBottom: 10,
+        flex: 1, 
+        height: null, 
+        width: null, 
+        resizeMode: 'cover', 
+        borderRadius: 10, 
+        borderWidth: 1, 
+        borderColor: '#dddddd',
+        paddingBottom: 10,
 	},
 	header:{
 		flex: 1,

@@ -4,7 +4,7 @@ import MainService from './services/MainService';
 
 import { MainScreenNavigator } from './components/AppNavigation'
 import Home from './components/Home'
-import Leto from './components/Leto'
+import DecijiTurizam from './components/DecijiTurizam'
 
 export default class App extends React.Component {
   state = {

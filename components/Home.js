@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Platform, Image, Dimensions, ImageBackground, ScrollView, StatusBar, TouchableOpacity  } from 'react-native';
-
+import Category from './CategoryHome';
 
 const { height, width } = Dimensions.get('window')
 
@@ -21,6 +21,7 @@ export default class Home extends React.Component {
             <Image source={require('../img/dest-logo.jpg')} style={styles.logo}/>
         </View>
         <ScrollView>
+        
         <TouchableOpacity onPress={() =>
           navigate('Budva', { name: 'Budva' })}>
           <View style={styles.row1}>
@@ -39,7 +40,6 @@ export default class Home extends React.Component {
               Rafailovići
             </Text>
           </ImageBackground>
-                       
         </View>
         </TouchableOpacity>
         <View style={styles.row1}> 
@@ -48,7 +48,6 @@ export default class Home extends React.Component {
               Čanj
             </Text>
           </ImageBackground>
-                       
         </View>
         <View style={styles.row1}> 
           <ImageBackground source={require('../img/dest-herceg-novi.jpg')} style={styles.imageBackground} >
@@ -56,7 +55,6 @@ export default class Home extends React.Component {
               Herceg Novi
             </Text>
           </ImageBackground>
-                       
         </View>
         <View style={{ flex:1,  width: width, height: 50,marginBottom:5,  alignItems: 'center', justifyContent: 'center', backgroundColor: '#f27a24' }}> 
           <Text style={styles.rowSrbija}>SRBIJA</Text>
@@ -67,7 +65,6 @@ export default class Home extends React.Component {
               Vrnjačka banja
             </Text>
           </ImageBackground>
-                       
         </View>
         <View style={styles.row1}> 
           <ImageBackground source={require('../img/dest-soko-banja.jpg')} style={styles.imageBackground} >
@@ -75,7 +72,6 @@ export default class Home extends React.Component {
               Soko banja
             </Text>
           </ImageBackground>
-                       
         </View>
         <View style={styles.row1}> 
           <ImageBackground source={require('../img/dest-mataruska-banja.jpg')} style={styles.imageBackground} >
@@ -83,7 +79,6 @@ export default class Home extends React.Component {
               Mataruška banja
             </Text>
           </ImageBackground>
-                       
         </View>
       </ScrollView>
       </SafeAreaView>
@@ -105,11 +100,11 @@ const styles = StyleSheet.create({
     
   },
   header: {
-    height: '10%', 
+    height: '13%', 
     backgroundColor: 'white', 
     borderBottomWidth: 1, 
     borderBottomColor: '#dddddd',
-    marginTop:30,
+    marginTop:"10%",
     alignItems: 'center',
     justifyContent:'center'
     

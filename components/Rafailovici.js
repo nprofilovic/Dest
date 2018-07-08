@@ -4,6 +4,7 @@ import {
 	View,
 	Image,
 	StatusBarIOS,
+	ImageBackground,
 	ListView,
   Animated,
   ActivityIndicator,
@@ -15,7 +16,7 @@ import {
 } from "react-native";
 import { Font } from "expo";
 
-import ProductItem from "./ProductItem";
+import ProductItemGrid from "./ProductItemGrid";
 import Api from "../WooCommerce/Api";
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
 var offset = 0;
@@ -152,7 +153,7 @@ export default class Rafailovici extends Component {
   }
 	renderRow(product) {
 		return (
-				<ProductItem product={product} onOpenProduct={() => this.onOpenProductCard(product)} />
+				<ProductItemGrid product={product} onOpenProduct={() => this.onOpenProductCard(product)} />
 		);
 	}
 
@@ -199,65 +200,116 @@ export default class Rafailovici extends Component {
     }
 		
 		return (
-			<View>
-      
-        <Header style={{ backgroundColor: 'white' }}>
-          <Left>
-            <Button transparent>
-              <Icon name='arrow-back' onPress={this.onOpenHomePage} style={{ color: 'black' }}/>
-            </Button>
-          </Left>
-          <Body>
-            <Title style={{ color: 'black' }}>Rafailovici</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Text></Text>
-            </Button>
-          </Right>
-        </Header>
-      
-
-				<ScrollView
-					style={{paddingTop: 5}}
-					onScroll={this.onScroll.bind(this)} scrollEventThrottle={30}
-				>
+			<View style={styles.container}>
+				<View style={styles.header}>
+					<ImageBackground source={require('../img/dest-rafailovici.jpg')} style={styles.headerImageBackground} >
+						<Icon name='arrow-back' onPress={this.onOpenHomePage} style={styles.headerIcon}/>
+						<Text style={styles.headerText}>Rafailovici</Text>
+					</ImageBackground>
 					
-					<ListView
-						onEndReached={this.onEndReached.bind(this)}
-						dataSource={this.state.dataSource}
-						onRefresh={this.handleRefresh}
-						renderRow={this.renderRow.bind(this)}>
-					</ListView>
-				</ScrollView>
+				</View>
+        
+				<View style={styles.contain}>
+					<ScrollView
+						style={{paddingTop: 5}}
+						onScroll={this.onScroll.bind(this)} scrollEventThrottle={30}
+					>
+						
+						<ListView
+							onEndReached={this.onEndReached.bind(this)}
+							dataSource={this.state.dataSource}
+							onRefresh={this.handleRefresh}
+							style={{ flex: 1,  backgroundColor: '#fff', alignContent:'stretch'}}
+              contentContainerStyle={styles.list}
+							renderRow={this.renderRow.bind(this)}>
+							
+						</ListView>
+					</ScrollView>
+				
+				</View>
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  
-  logo: {
-    width: 100,
-    height: 100,
-    
+	container: {
+			flex: 1,
+			backgroundColor: '#fff', 
+			
+	},
+	logo: {
+			width: 100,
+			height: 100,
+	
 	},
 	image: {
-    flex: 1, 
-    height: null, 
-    width: null, 
-    resizeMode: 'cover', 
-    borderRadius: 10, 
-    borderWidth: 1, 
-    borderColor: '#dddddd',
-    paddingBottom: 10,
-  },
-  
+			flex: 1, 
+			height: null, 
+			width: null, 
+			resizeMode: 'cover', 
+			borderRadius: 10, 
+			borderWidth: 1, 
+			borderColor: '#dddddd',
+			paddingBottom: 10,
+	},
+	header:{
+		flex: 1,
+		flexDirection: 'row',
+		backgroundColor:"#000",
+	},
+	contain:{
+		...Platform.select({
+			ios: {
+				flex: 4,
+			},
+			android: {
+				flex: 3,
+			}
+		}),
+		flex:4,
+
+	},
+	headerText: {
+		color:"#fff", 
+		...Platform.select({
+			ios: {
+				paddingTop: '30%'
+			},
+			android: {
+				paddingTop: '18%'
+			}
+		}),
+		
+		paddingLeft:20,
+		fontSize: 30,
+		fontWeight:"200",
+	},
+	headerIcon: {
+		color: 'white', 
+		...Platform.select({
+			ios:{
+				paddingTop: '31%',
+			},
+			android: {
+				paddingTop: '20%',
+			}
+		}),
+		
+		paddingLeft: 10,
+	},
+	headerImageBackground: {
+		width: '100%', 
+		height: '100%', 
+		flex:1, 
+		flexDirection:'row',
+		opacity: .8
+	},
+	list:{
+		flexDirection: 'row', 
+		flexWrap: 'wrap', 
+		justifyContent: 'center',
+	}
+
 
 });

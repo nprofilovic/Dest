@@ -12,7 +12,7 @@ import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 
 const { height, width } = Dimensions.get('window');
 export default class ProductItem extends Component {
     
- 
+
     render() {
         const htmlContent =  this.props.product.short_description;
         const price = this.props.product.price_html;
@@ -22,28 +22,21 @@ export default class ProductItem extends Component {
         console.log('====================================');
         
         return (
-       
-          
-          <Content>
-          <List>
-          
-            <ListItem onPress={this.props.onOpenProduct}>
-              <Thumbnail square source={{ uri: this.props.product.images[0].src }} style={{width: 120, height: 100}}  />
-              <Body>
-                <Text style={{fontWeight: '600', color: 'red', marginLeft:20,paddingTop:10}}>{this.props.product.name}</Text>
-                <HTMLView value={htmlContent} stylesheet={styles} style={{marginLeft: 20,}} />
-            
-              </Body>
-              <Right>
-                <Button style={{padding:5, width:60}} >
-                  <HTMLView value={price} stylesheet={cena} />
-                </Button>
+          <TouchableHighlight onPress={this.props.onOpenProduct}>
+            <Card style={{flex:1, flexDirection: 'row'}} >
+              
+              <View>
+                <Image style={{ flex: 1, height: 110, width: 150, }} source={{ uri: this.props.product.images[0].src }}   />
+              </View>
+              <Right style={{ flex: 1, alignItems: 'flex-start', height: 120, paddingHorizontal: 10 }}>
+                <Text style={{fontWeight: '600', color: 'red',paddingTop:10}}>{this.props.product.name}</Text>
+                <HTMLView value={price} stylesheet={cena} />
+                <HTMLView value={htmlContent} stylesheet={styles} />
+                
               </Right>
-            </ListItem>
             
-          </List>
-          </Content>
-       
+            </Card>
+          </TouchableHighlight>
           
         )
         
@@ -68,7 +61,8 @@ const styles = StyleSheet.create({
 });
 const cena = StyleSheet.create({
   span:{
-    fontSize: 11,
-    color:'#fff'
+    fontSize: 12,
+    color:'#000',
+    
   }
 })

@@ -14,7 +14,6 @@ export default class ProductItemCard extends React.Component {
         this.state= {
           modalVisible: false,
           image: '',
-         
         }
       }
       
@@ -34,7 +33,7 @@ export default class ProductItemCard extends React.Component {
           return image.src
           
         }
-       
+
       )
         const cards = [
           {
@@ -88,7 +87,7 @@ export default class ProductItemCard extends React.Component {
                             <Thumbnail source={require('../img/dest-logo.jpg')} />
                             <Body>
                               <Text>{name}</Text>
-                              <Text note>{price}</Text>
+                              <Text note>{price} €</Text>
                             </Body>
                           </Left>
                         </CardItem>
