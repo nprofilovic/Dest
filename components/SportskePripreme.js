@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform, ImageBackground, StatusBar, Image, ScrollView } from 'react-native';
-import { PricingCard } from 'react-native-elements'
+import { Icon } from 'native-base';
+
 import {RkModalImg, RkTheme} from 'react-native-ui-kitten';
 
 
@@ -29,6 +30,7 @@ render() {
       <StatusBar barStyle="light-content" />
       <View style={styles.header}>
         <ImageBackground source={{uri: 'http://dest.rs/wp-content/uploads/2018/05/okanik-6.jpg'}} style={styles.headerImageBackground} >
+          <Icon name='arrow-back' onPress={() => navigate('DecijiTurizam', { name: 'DecijiTurizam' })} style={styles.headerIcon} />
           <Text style={styles.headerText}>Sportske Pripreme i Festivali</Text>
         </ImageBackground>
       </View>

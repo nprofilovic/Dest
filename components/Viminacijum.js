@@ -1,12 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Platform, ImageBackground, StatusBar, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Platform, ImageBackground, StatusBar, Image, ScrollView,  } from 'react-native';
 import { PricingCard } from 'react-native-elements'
+import { Icon } from 'native-base';
 import {RkModalImg, RkTheme} from 'react-native-ui-kitten';
 export default class Viminacijum extends React.Component {
 
 
 render() {
     const { navigate } = this.props.navigation;
+    const { goBack } = this.props.navigation;
     let images = [
       {uri: 'http://dest.rs/wp-content/uploads/2018/05/Viminacium-Avantura_poligon-legionara-1.jpg'},
       {uri: 'http://dest.rs/wp-content/uploads/2018/05/Viminacium-Avantura_poligon-legionara-2.jpg'},
@@ -21,6 +23,7 @@ render() {
       <StatusBar barStyle="light-content" />
       <View style={styles.header}>
         <ImageBackground source={{uri: 'http://dest.rs/wp-content/uploads/2018/05/viminacijum-04.jpg'}} style={styles.headerImageBackground} >
+          <Icon name='arrow-back' onPress={() => navigate('DecijiTurizam', { name: 'DecijiTurizam' })} style={styles.headerIcon} />
           <Text style={styles.headerText}>Viminacijum</Text>
         </ImageBackground>
       </View>
