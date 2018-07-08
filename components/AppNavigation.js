@@ -72,6 +72,12 @@ export const Navigation = createBottomTabNavigator ({
     }
   })
   const ScreenNotOnTabbar = createStackNavigator ({
+    Home: {
+      screen: NewHome,
+      navigationOptions: {
+        header: null
+      }
+    },
     Budva: {
       screen: Budva,
       navigationOptions: {
@@ -158,15 +164,15 @@ export const Navigation = createBottomTabNavigator ({
       screen: Navigation,
       navigationOptions: {
         header: null
-    }
+      }
     
     },
     ScreenNotOnTabbar: { 
       screen: ScreenNotOnTabbar,
       navigationOptions: {
         header: null
-    }
-     },
+      }
+    },
     
     
   });
