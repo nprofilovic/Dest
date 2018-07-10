@@ -224,6 +224,19 @@ export default class Canj extends Component {
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+						<Text style={styles.canjTitle}>Čanj</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+              Čanj je malo turističko mesto smešteno između Petrovca i Sutomora. Čanjska uvala, u kojoj se 
+              nalazi ovo naselje, ima jednu od najlepših šljjunkovitih plaža na crnogorskom primorju, koja 
+              se prostire dužinom od 1200 metara. {'\n'}{'\n'}Prednost ovog letovališta je to što je izolovano od velikih 
+              saobraćajnica, pa čitava porodica može da uživa u prijatnom odmoru. Toplo more, peščana plaža, 
+              prijatna sredozemna klima, plavetnilo i parkovi uticali su na to da Čanj postane jedno od 
+              najposećenijih turističkih destinacija u Crnoj Gori. {'\n'}{'\n'}Turističko naselje “Biserna obala” Čanj 
+              ima oko 1700 kreveta sa preko 900 soba u hotelima “Biserna obala” , “Zlatibor”, depadansima 
+              “Bakar” i “Krušik” i paviljonima. Naselje ima tri restorana sa preko 1200 mesta, letnje bašte 
+              i terase, aperitiv i kafe bar i poslastičarnicu. Posebno je pogodno za porodice sa malom decom,
+              zbog zabrane saobraćaja u naselju.
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -283,7 +296,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -309,6 +322,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+  },
+  canjTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

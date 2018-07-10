@@ -1,6 +1,33 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "name": "Dest Travel",
+    "description": "Pogledajte uvek aktuelnu ponudu nase agencije",
+    "icon": "./img/logo-app.png",
+    "slug": "desttavel",
+    "privacy": "public",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "com.desttravel.dest",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.desttravel.dest",
+      "permissions": [
+        ""
+      ]
+    },
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#fff",
+    "loading": {
+      "hideExponentText": true,
+      "icon": "./img/logo-app.png"
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp4"
+      ]
+    }
   }
-  
 }

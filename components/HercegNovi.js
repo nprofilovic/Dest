@@ -8,7 +8,8 @@ import {
 	ScrollView,
 	Platform,
 	StyleSheet,
-    StatusBar
+    StatusBar,
+    TouchableOpacity
 	
 } from "react-native";
 import { Font } from "expo";
@@ -197,8 +198,8 @@ export default class HercegNovi extends Component {
 			<View style={styles.container}>
 			<StatusBar barStyle="light-content" />
 				<View style={styles.header}>
-					<ImageBackground source={require('../img/dest-herceg-novi2.jpg')} style={styles.headerImageBackground} >
-						<Icon name='arrow-back' onPress={this.onOpenHomePage} style={styles.headerIcon}/>
+					<ImageBackground source={require('../img/dest-herceg-novi.jpg')} style={styles.headerImageBackground} >
+            <Icon name='arrow-back' onPress={this.onOpenHomePage} style={styles.headerIcon}/>
 						<Text style={styles.headerText}>Herceg Novi</Text>
 					</ImageBackground>
 					
@@ -221,6 +222,18 @@ export default class HercegNovi extends Component {
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+						<Text style={styles.hercegnoviTitle}>Herceg Novi</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+            Kada jednom provedete svoj odmor u Herceg Novom, to će za vas biti grad koji će vam uvek 
+            nedostajati, grad u koji ćete želeti da se ponovo vratite.{'\n'}{'\n'} Smešten na ulazu u jedan od 
+            najlepših zaliva sveta-Boki Kotorskoj, utonuo u raskošno zelenilo, opasan šestovekovnim
+            tvrđavama i zidinama, ovaj grad je prava riznica multikulturnog nasleđa nastalog 
+            susretanjem raznih naroda i civilizacija. {'\n'}{'\n'}Herceg Novi je grad sa najvišom prosečnom 
+            temperaturom na Jadranskom moru i sa preko dvesta sunčanih dana tokom godine što ga 
+            čini jednim od najprijatnijih mesta za odmor na Crnogorskom primorju. {'\n'}{'\n'}Svako ovde može naći 
+            svoje mesto za odmor i zabavu, ako ovom dodamo i dobru saobraćajnu povezanost, onda je Herceg Novi, 
+            pravi izbor za Vas…
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -280,7 +293,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -306,6 +319,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+	},
+	hercegnoviTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

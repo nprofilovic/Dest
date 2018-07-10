@@ -135,7 +135,7 @@ export default class SokoBanja extends Component {
 	
 	
 	onOpenProductCard = (product) => {
-		this.props.navigation.navigate('ProductItemCard',{
+		this.props.navigation.navigate('ProductItemCardDin',{
 			name: product.name,
 			image: product.images,
 			imageName: product.images.name,
@@ -221,6 +221,13 @@ export default class SokoBanja extends Component {
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+            <Text style={styles.sokobanjaTitle}>Soko banja</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+              Za Sokobanju se sa pravom može reći da je gospodarica banjskog turizma u Srbiji i 
+              da je srpska kraljica turizma. Čist vazduh, kvalitetne termalne vode, mnoštvo parkova 
+              su idealno mesto za lečenje plućnih bolesti, reumatska oboljenja, nervno obolele osobe, 
+              a pogotovo se preporučuje za odmor i rekreaciju.
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -280,7 +287,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -306,6 +313,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+	},
+	sokobanjaTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

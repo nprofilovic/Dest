@@ -61,7 +61,7 @@ render() {
                 button={{ title: 'Kontakt'}}
               />
             </View>
-            <Image source={{uri: 'http://dest.rs/wp-content/uploads/2018/05/viminacijum.png'}} style={{height: 40, resizeMode:'contain' }} />
+            
             <Text style={styles.viminacijumTitle}>POLIGON LEGIONARA</Text>
             <Text style={{textAlign: 'center', padding: 10}}>
               U izgradnji Poligona učestvovale su brojne iskusne glave, od inženjera i građevinaca, sportskih stručnjaka i vojnih specijalaca, a sve u cilju da zavrtimo vremeplov i svoje učesnike smestimo u autentično doba rimskih vojnika. Učesnici prepreke prelaze preskakanjem, penjanjem, puzanjem, provlačenjem – samostalno i/ili u timu, prolaskom kroz blato, vodu, zemlju, slamu. Poligon legionara izazov je za najspretnije i najčvršće.

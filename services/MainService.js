@@ -1,5 +1,5 @@
 export default class MainService {
     static load(cb) {
-        setTimeout(cb, 5000);
+        setTimeout(cb, 2000);
     }
 }

@@ -98,7 +98,7 @@ export default class ProductItemCard extends React.Component {
                             <Thumbnail source={require('../img/dest-logo.jpg')} />
                             <Body>
                               <Text>{name}</Text>
-                              <Text note>{price} €</Text>
+                              <Text note>{price} din.</Text>
                             </Body>
                           </Left>
                         </CardItem>

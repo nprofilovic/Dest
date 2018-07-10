@@ -4,25 +4,23 @@ import {
 	ListView,
 	Animated,
 	ImageBackground,
-    ActivityIndicator,
+  ActivityIndicator,
 	ScrollView,
 	Platform,
 	StyleSheet,
-    StatusBar
+  StatusBar
 	
 } from "react-native";
 import { Font } from "expo";
 
 import ProductItem from "./ProductItemGridDin";
 import Api from "../WooCommerce/Api";
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import {  Icon, Text } from 'native-base';
 var offset = 0;
 var offsetHeader = 100;
 var beta = 50;
 
 export default class SokoBanja extends Component {
-		
-	
 
 
 	constructor(props) {
@@ -135,7 +133,7 @@ export default class SokoBanja extends Component {
 	
 	
 	onOpenProductCard = (product) => {
-		this.props.navigation.navigate('ProductItemCard',{
+		this.props.navigation.navigate('ProductItemCardDin',{
 			name: product.name,
 			image: product.images,
 			imageName: product.images.name,
@@ -221,6 +219,16 @@ export default class SokoBanja extends Component {
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+						<Text style={styles.mataruskaTitle}>Mataruška banja</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+              Mataruška banja se nalazi 8 km jugozapadno od Kraljeva,180 km od Beograda, na desnoj obali 
+              reke Ibar na obroncima planine Stolovi i Čemerno, na 215 m nadmorske visine. {'\n'}{'\n'}Umereno-kontinentalna klima, 
+              reka Ibar i prostran park pružaju izvanredne mogućnosti za zdravstveni i sportsko-rekreativni
+              turizam. {'\n'}{'\n'}Lekovita mineralna voda temperature 42-51 C, savremena medicinska oprema i 
+              visokostručni kadar daje izvanredne rezultate u lečenju reumatskih oboljenja, zapaljenskog 
+              reumatizma, sistemske bolesti vezivnog tkiva, degenerativnih oboljenja kičmenog stuba, ginekoloških 
+              oboljenja, neuroloških oboljenja, oboljenja perifernih krvnih sudova, kao i sva posttraumatska stanja.
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -280,7 +288,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -306,6 +314,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+  },
+  mataruskaTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

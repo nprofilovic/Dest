@@ -135,7 +135,7 @@ export default class VrnjackaBanja extends Component {
 	
 	
 	onOpenProductCard = (product) => {
-		this.props.navigation.navigate('ProductItemCard',{
+		this.props.navigation.navigate('ProductItemCardDin',{
 			name: product.name,
 			image: product.images,
 			imageName: product.images.name,
@@ -211,16 +211,24 @@ export default class VrnjackaBanja extends Component {
 					>
 						
 						<ListView
-						    style={{ flex: 1,  backgroundColor: '#fff', alignContent:'stretch'}}
-                            contentContainerStyle={styles.list}	
+						  style={{ flex: 1,  backgroundColor: '#fff', alignContent:'stretch'}}
+              contentContainerStyle={styles.list}	
 							onEndReached={this.onEndReached.bind(this)}
 							dataSource={this.state.dataSource}
-							onRefresh={this.handleRefresh}
-							
-						
+							onRefresh={this.handleRefresh}							
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+            <Text style={styles.vrnjackaTitle}>Vrnjačka banja</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+            Vrnjačka banja, Kraljica banja, kako je mnogi nazivaju, nalazi se u kraju, gde je nekada 
+            stvorena prva srpska država - Raška.{'\n'}{'\n'} U neposrednoj blizini Vrnjačke banje nalaze se brojni manastiri, 
+            crkve i stari gradovi. Prostire se delom na blagim obroncima planine Goč, a delom u dolini Vrnjačke 
+            i Lipovačke reke. {'\n'}{'\n'} Ima sedam poznatih izvora mineralne vode, čije korišćenje seže duboko u 
+            prošlost. Ovo je mesto u kojem možete uživati u bilo koje doba godine.
+
+
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -280,7 +288,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -306,6 +314,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+  }, 
+  vrnjackaTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

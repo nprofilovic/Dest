@@ -25,10 +25,12 @@ export default class ProductItemGrid extends Component {
 
             <View style={{ padding:10,borderRadius: 4 }}>
                 <TouchableHighlight onPress={this.props.onOpenProduct} >
-                    <ImageBackground style={{ flex: 1, height: 200, width: 160, }} source={{ uri: this.props.product.images[0].src }}>
+                  <View style={{backgroundColor: '#000'}}>
+                    <ImageBackground style={styles.image} source={{ uri: this.props.product.images[0].src }}>
                         <Text style={styles.title}>{this.props.product.name}</Text>
                         <Text style={styles.price}>{this.props.product.price} din.</Text>
                     </ImageBackground>
+                  </View>  
                 </TouchableHighlight>
             </View>
 
@@ -69,6 +71,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         
+    },
+    image:{
+        flex: 1,
+        width: width * 0.4, 
+        height: 200,
+        opacity: .8
     }
 
 });

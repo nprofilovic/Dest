@@ -1,9 +1,6 @@
 import React, {Component} from "react";
 import {
-	TextInput,
 	View,
-	Image,
-	StatusBarIOS,
 	ImageBackground,
 	ListView,
   Animated,
@@ -15,18 +12,14 @@ import {
 	
 } from "react-native";
 import { Font } from "expo";
-
 import ProductItemGrid from "./ProductItemGrid";
 import Api from "../WooCommerce/Api";
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import {  Icon, Text } from 'native-base';
 var offset = 0;
 var offsetHeader = 100;
 var beta = 50;
 
 export default class Rafailovici extends Component {
-		
-	
-
 
 	constructor(props) {
 		super(props);
@@ -204,7 +197,7 @@ export default class Rafailovici extends Component {
 				<View style={styles.header}>
 					<ImageBackground source={require('../img/dest-rafailovici.jpg')} style={styles.headerImageBackground} >
 						<Icon name='arrow-back' onPress={this.onOpenHomePage} style={styles.headerIcon}/>
-						<Text style={styles.headerText}>Rafailovici</Text>
+						<Text style={styles.headerText}>Rafailovići</Text>
 					</ImageBackground>
 					
 				</View>
@@ -224,6 +217,13 @@ export default class Rafailovici extends Component {
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+						<Text style={styles.rafailoviciTitle}>Rafailovići</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+							Rafailovćii su malo primorsko mesto kamenih kuća koje se nalazi između Budve i Svetog Stefana, 
+							koje je danas izraslo u atratktivno letovalište sa ambijentom primorskog mesta i brojnim 
+							sadržajima za ugodan odmor.{'\n'}{'\n'} Smešteno je na samo nekoliko kilometara od Budve, na završetku zaliva 
+							i velike Bečićke plaže, koja je još 1935. godine u Parizu dobila Grand Prix za najlepšu prirodnu plažu na Mediteranu.
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -309,6 +309,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+	},
+	rafailoviciTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

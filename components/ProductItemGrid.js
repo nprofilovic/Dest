@@ -9,6 +9,7 @@ import { Right, Header, Content, List, ListItem, Thumbnail,  Body, Button } from
 import HTMLView from 'react-native-htmlview'; 
 
 
+
 const { height, width } = Dimensions.get('window');
 export default class ProductItemGrid extends Component {
     
@@ -23,12 +24,15 @@ export default class ProductItemGrid extends Component {
         
         return (
 
-            <View style={{ padding:10,borderRadius: 4 }}>
+            <View style={{ padding:10,borderRadius: 4,  }}>
                 <TouchableHighlight onPress={this.props.onOpenProduct} >
-                    <ImageBackground style={{ flex: 1, height: 200, width: 160, }} source={{ uri: this.props.product.images[0].src }}>
-                        <Text style={styles.title}>{this.props.product.name}</Text>
-                        <Text style={styles.price}>{this.props.product.price} €</Text>
-                    </ImageBackground>
+                    <View style={{backgroundColor: '#000'}}>
+                        <ImageBackground style={styles.image} source={{ uri: this.props.product.images[0].src }}>
+                            <Text style={styles.title}>{this.props.product.name}</Text>
+                            <Text style={styles.price}>{this.props.product.price} €</Text>
+                        </ImageBackground>
+                    </View>
+                    
                 </TouchableHighlight>
             </View>
 
@@ -61,6 +65,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         
         
+        
     },
     price:{
         fontWeight: '900', 
@@ -69,6 +74,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         
+    },
+    image:{
+        flex: 1,
+        width: width * 0.4, 
+        height: 200,
+        opacity: .8
     }
 
 });

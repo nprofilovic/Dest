@@ -227,6 +227,27 @@ export default class Budva extends Component {
 							renderRow={this.renderRow.bind(this)}>
 							
 						</ListView>
+						<Text style={styles.budvaTitle}>Budva</Text>
+						<Text style={{textAlign: 'justify', padding: 10, marginBottom:20}}>
+							Usponi velikih mediteranskih kultura obeležili su duh ovog grada, koji se oseća i danas, kada je Budva izrasla u 
+							jedinstveni turistički biser ovog dela Jadrana. Kao turistička destinacija ovaj grad je poznat od davno – prvi turisti 
+							ovde su stigli još 1923. godine, a danas Budvu često nazivaju i “metropolom turizma” jer je najposećenija destinacija 
+							u Crnoj Gori i jedna od najposećenijih na Jadranu. {'\n'}{'\n'}Ono što privlači ljude i dovodi ih u Budvu je pre svega 
+							nešto što je priroda darovala ovom kraju, a to je neponovljiva lepotu sunca, mora, kao i niska bisernih plaža u podnožju 
+							gorostasnih planina.{'\n'}{'\n'} Panoramom budvanske rivijere rasprotranjeni su slikoviti, prirodnim lepotama prožeti gradići 
+							koji ovom dijelu obale daju neponovljivu draž. Izdvajaju se Sveti Stefan , Pržno i Petrovac. {'\n'}{'\n'}Velika vrednost Budve 
+							je i njeno kulturno i istorijsko nasleđe: brojni spomenici, iskopine, tvrdave, manastiri, crkve . Turistički sadržaj ovog grada 
+							obogaćuju i tradicionalne manifestacije kulture, zabave, nauke. Posebna priča je noćni život po kome je Budva takođe poznata, 
+							njene ulice i trgovi žive do duboko u noć i ako se prepustite budvanskoj večeri i krenete za ritmom koji vam srce diktira i 
+							sigurno će vam se dogoditi sjajna zabava. Na kraju tu je i tradicionalno gostoprimstvo koje ce Vaš boravak ovde učiniti još ugodnijim. 
+							{'\n'}{'\n'}Grad teatar jedna je od manifestacija po kojoj je Budva prepoznatljiva na prostorima bivše Jugoslavije i u Evropi, 
+							a osnovan je sa ciljem da poboljša turističku ponudu. Ljubitelji pozorišta, koncerata, književnih večeri, kako poznatih tako i 
+							književnika koji treba da se afirmišu, likovne i muzičke umetnosti, mogu uživati u raznovrsnosti programa koji traje od sredine 
+							jula do kraja avgusta. Krajem juna međunarodni muzički festival “Pesma Mediterana” okuplja brojna poznata imena iz sveta muzike, 
+							od kojih većinu tokom čitavog leta možete sresti u metropoli turizma, a održava se tri noći na Trgu Slikara ispred zidina Starog grada. 
+							{'\n'}{'\n'}Pored takmičarskog diela domaćih i stranih izvođača u mediteranskoj i pop muzici, u revijalnom dielu se predstavljaju 
+							svetski poznata imena iz sveta muzike i mode.
+						</Text>
 					</ScrollView>
 				
 				</View>
@@ -287,7 +308,7 @@ const styles = StyleSheet.create({
 		
 		paddingLeft:20,
 		fontSize: 30,
-		fontWeight:"200",
+		fontWeight:"300",
 	},
 	headerIcon: {
 		color: 'white', 
@@ -313,6 +334,12 @@ const styles = StyleSheet.create({
 		flexDirection: 'row', 
 		flexWrap: 'wrap', 
 		justifyContent: 'center',
+	},
+	budvaTitle: {
+		textAlign: 'center',
+		fontSize: 24,
+		fontWeight: 'bold',
+		padding: 10
 	}
 
 

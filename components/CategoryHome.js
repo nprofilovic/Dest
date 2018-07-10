@@ -20,8 +20,9 @@ class Category extends Component {
                         style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
                     />
                 </View>
-                <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-                    <Text>{this.props.product.name}</Text>
+                <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, backgroundColor: '#fff'}}>
+                    <Text numberOfLines={1}>{this.props.product.name}</Text>
+                    <Text style={{color: "#f27a24", fontWeight: 'bold', textAlign: 'center'}}>{this.props.product.price} €</Text>
                 </View>
             </View>
             </TouchableOpacity>

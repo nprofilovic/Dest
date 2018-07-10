@@ -16,12 +16,13 @@ import MataruskaBanja from './MataruskaBanja';
 import Viminacijum from './Viminacijum';
 import SportskePripreme from './SportskePripreme';
 import ProductItemCard from './ProductItemCard';
+import ProductItemCardDin from './ProductItemCardDin';
 
 export const Navigation = createBottomTabNavigator ({
     Home: {
         screen: NewHome,
         navigationOptions: {
-          tabBarLabel: 'HOME',
+          tabBarLabel: 'LETO',
           tabBarIcon: ({ tintColor }) => (
             <Image source={require('../img/icon/007-sunset.png')} style={{ height: 24, width: 24, tintColor: tintColor }} />
           )
@@ -72,12 +73,7 @@ export const Navigation = createBottomTabNavigator ({
     }
   })
   const ScreenNotOnTabbar = createStackNavigator ({
-    Home: {
-      screen: NewHome,
-      navigationOptions: {
-        header: null
-      }
-    },
+    
     Budva: {
       screen: Budva,
       navigationOptions: {
@@ -134,6 +130,12 @@ export const Navigation = createBottomTabNavigator ({
     },
     ProductItemCard: {
       screen: ProductItemCard,
+      navigationOptions: {
+        header: null
+      }
+    },
+    ProductItemCardDin: {
+      screen: ProductItemCardDin,
       navigationOptions: {
         header: null
       }

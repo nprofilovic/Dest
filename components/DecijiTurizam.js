@@ -85,7 +85,7 @@ headerText: {
 			paddingTop: '30%'
 		},
 		android: {
-			paddingTop: '18%'
+			paddingTop: '17%'
 		}
 	}),
 	
@@ -125,12 +125,13 @@ imageText: {
   fontWeight:'500', 
   ...Platform.select({
     ios: {
-      paddingTop:120, 
+      paddingTop:'30%', 
       paddingLeft:20
     },
     android: {
-      paddingTop:120, 
-      paddingLeft:20
+      paddingTop:'18%', 
+      paddingLeft:20,
+      paddingRight:20
     }
   }),
   

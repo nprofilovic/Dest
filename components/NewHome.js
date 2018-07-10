@@ -41,7 +41,7 @@ export default class Leto extends Component {
 			page: 1,
 			limit: 100,
 			status: "publish",
-			category: 93,
+			category: 101,
 			data:[],
 			text: '',
 			isOnline: true,
@@ -157,47 +157,44 @@ export default class Leto extends Component {
 		);
 	}
 
-  
-
 	handleLoadMore = () => {
 		this.setState(state => ({ page: state.page + 1 }), () => this.fetchData());
   };
 
   handleRefresh = () => {
-    this.setState(
+      this.setState(
       {
         page: 1,
         refreshing: true
       },
       () => {
-        this.fetchData();
+      this.fetchData();
       }
-    );
+  );
   };
-    renderFooter = () => {
-    return (
-        <View
+  renderFooter = () => {
+  return (
+      <View
             style={{
             paddingVertical: 20,
             borderTopWidth: 1,
             borderColor: "#CED0CE"
             }}
-        >
+      >
             <ActivityIndicator animating size="small" />
-        </View>
-        );
-    };
+      </View>
+      );
+  };
 
 	render() {
 		const { navigate } = this.props.navigation;
-    
 		if (this.state.isLoading) {
         return (
             <View style={{flex: 1, paddingTop: 220}}>
             <ActivityIndicator />
             </View>
         );
-    }
+  }
 		
 		return (
 			<SafeAreaView style={styles.container}>
@@ -210,10 +207,10 @@ export default class Leto extends Component {
 						style={{ marginBottom: 100, marginTop:10}}
 						onScroll={this.onScroll.bind(this)} scrollEventThrottle={30}
 					>
-						<View style={{flex: 1, backgroundColor: 'white', paddingTop: 10, paddingBottom: 5, flexDirection: 'column'}}>
-						<View style={{ flex:1,  width: width, height: 50,  alignItems: 'center', justifyContent: 'center', backgroundColor: '#f27a24' }}> 
-                            <Text style={styles.rowSrbija}>CRNA GORA</Text>
-                        </View>
+						<View style={{flex: 1, backgroundColor: '#f27a24', paddingTop: 10, paddingBottom: 10, flexDirection: 'column'}}>
+              <View style={{ flex:1,  width: width, height: 50,  alignItems: 'center', justifyContent: 'center', backgroundColor: '#f27a24' }}> 
+                  <Text style={styles.rowSrbija}>AKCIJA LAST MINUTE CRNA GORA</Text>
+              </View>
 						<View style={{height: 130, marginTop: 5}}>
 							<ScrollView 
 								
@@ -224,8 +221,6 @@ export default class Leto extends Component {
 									onEndReached={this.onEndReached.bind(this)}
 									dataSource={this.state.dataSource}
 									onRefresh={this.handleRefresh}
-									
-								
 									renderRow={this.renderRow.bind(this)}>
 									
 								</ListView>
@@ -233,25 +228,24 @@ export default class Leto extends Component {
 						</View>
 					
 					</View>
-                    
-					<TouchableOpacity onPress={() =>
-                        navigate('Budva', { name: 'Budva' })}>
-                        <View style={styles.row1}>
-                            <ImageBackground source={require('../img/dest-budva.jpg')} style={styles.imageBackground} >
-                            <Text style={styles.budvaText}>
-                                Budva
-                            </Text>
-                            </ImageBackground>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigate('Rafailovici', { name: 'Rafailovici' })}>
-                        <View style={styles.row1}> 
-                            <ImageBackground source={require('../img/dest-rafailovici.jpg')} style={styles.imageBackground} >
-                                <Text style={styles.budvaText}>
-                                Rafailovići
-                                </Text>
-                            </ImageBackground>
-                        </View>
+
+					<TouchableOpacity onPress={() => navigate('Budva', { name: 'Budva' })}>
+            <View style={styles.row1}>
+              <ImageBackground source={require('../img/dest-budva.jpg')} style={styles.imageBackground} >
+                <Text style={styles.budvaText}>
+                  Budva
+                </Text>
+              </ImageBackground>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate('Rafailovici', { name: 'Rafailovici' })}>
+            <View style={styles.row1}> 
+              <ImageBackground source={require('../img/dest-rafailovici.jpg')} style={styles.imageBackground} >
+                  <Text style={styles.budvaText}>
+                    Rafailovići
+                  </Text>
+              </ImageBackground>
+            </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigate('Canj', { name: 'Canj' })}>
                         <View style={styles.row1}> 
